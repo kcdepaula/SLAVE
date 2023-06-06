@@ -8,7 +8,7 @@ if($user->get_session()){
 }
 if(isset($_REQUEST['submit'])){
 	extract($_REQUEST);
-	$login = $user->check_login($useremail,$password);
+	$login = $user->check_login($useremail,md5($password));
 	if($login){
 		header("location: index.php");
 	}else{

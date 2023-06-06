@@ -23,6 +23,14 @@
 
             <label for="lname">Last Name</label>
             <input type="text" id="lname" class="input" name="lastname" value="<?php echo $user->get_user_lastname($id);?>" placeholder="Your last name..">
+
+            <label for="access">Access Level</label>
+            <select id="access" name="access">
+             <option> <?php echo $user->get_user_access($id);?> </option>
+             <option value="Staff"> Staff </option>
+             <option value="Supervisor"> Supervisor </option>
+             <option value="Manager"> Manager </option>
+            </select>
         </div>
      
         <div id="form-block-half">

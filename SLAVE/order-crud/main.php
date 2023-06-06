@@ -1,3 +1,5 @@
+<span id="search-result">
+<h3> Orders </h3>
 <div id="subcontent">
     <table id="data-list">
       <tr>
@@ -16,7 +18,7 @@ foreach($order->list_order() as $value){
 ?>
       <tr>
         <td><?php echo $count;?></td>
-        <td><a href="index.php?page=settings&subpage=order&action=profile&id=<?php echo $order_id;?>"><?php echo $customer_name;?></a></td>
+        <td><a><?php echo $customer_name;?></a></td>
         <td><?php echo $quantity;?></td>
         <td><?php echo $product_name;?></td>
       </tr>
@@ -30,3 +32,4 @@ foreach($order->list_order() as $value){
 ?>
     </table>
 </div>
+</span>

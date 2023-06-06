@@ -1,3 +1,5 @@
+<div id="search-result">
+<h3> Products </h3>
 <div id="subcontent">
     <table id="data-list">
       <tr>
@@ -5,7 +7,7 @@
         <th>Product Name</th>
         <th>Product Description</th>
         <th>Product Type</th>
-        <th>Product price</th>
+        <th>Product Price</th>
         <th>Size</th>
       </tr>
 <?php
@@ -18,7 +20,7 @@ foreach($product->list_product() as $value){
 ?>
       <tr>
         <td><?php echo $count;?></td>
-        <td><a href="index.php?page=settings&subpage=products&action=profile&id=<?php echo $product_id;?>"><?php echo $product_name;?></a></td>
+        <td><a href="index.php?subpage=productview&action=profile&id=<?php echo $product_id;?>"><?php echo $product_name;?></a></td>
         <td><?php echo $product_description;?></td>
         <td><?php echo $product_type;?></td>
         <td><?php echo $product_price;?></td>
@@ -33,4 +35,5 @@ foreach($product->list_product() as $value){
 }
 ?>
     </table>
+</div>
 </div>

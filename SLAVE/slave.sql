@@ -13,6 +13,7 @@ CREATE TABLE `tbl_users` (
   `user_time_updated` time NOT NULL default '00:00:00',
   `user_status` int(1) NOT NULL default '0',
   `user_token` varchar(255) NOT NULL default '',
+  `user_access` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10000001;
 
@@ -23,6 +24,8 @@ CREATE TABLE `tbl_order` (
   `user_id` int(8) NOT NULL default'0',
   `quantity` int (8) NOT NULL default '0',
   `product_name` varchar (50) NOT NULL default '',
+  `order_date_added` date NOT NULL default '',
+  `order_time_added` time NOT NULL default '',
   `delivery_id` int (8) NOT NULL default '0',
   `product_id` int(8) NOT NULL default'0',
   PRIMARY KEY  (`order_id`),

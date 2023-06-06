@@ -1,3 +1,4 @@
+<h3> Orders </h3>
 <div id="form-block">
     <form method="POST" action="processes/process.order.php?action=new_order">
         <div id="form-block-center">

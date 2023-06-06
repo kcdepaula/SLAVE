@@ -26,6 +26,6 @@ function create_new(){
     $pname= ucwords($_POST['pname']);
     $order_id = $order->new_order($oname,$quant,$pname);
     if(is_numeric($order_id)){
-        header('location: ../index.php?page=settings&subpage=orderview&action=profile&id='.$order_id);
+        header('location: ../index.php?subpage=orderview&action=view');
     }
 }

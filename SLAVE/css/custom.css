@@ -7,6 +7,9 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
+
+
+
 #wrapper{
   width: 98%;
     min-height: 600px;
@@ -59,6 +62,11 @@ body{
   color: #000;
   font-weight: bold;
   cursor: pointer;
+}
+.button ul{
+  height: 10px;
+  float: left;
+  width: 50%;
 }
 #content{
     width: 96%;
@@ -159,6 +167,8 @@ input[type=submit]:hover {
     text-align: center;
 }
 
+
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -212,6 +222,27 @@ hr {
   display: table;
 }
 
+.my-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.my-button:hover {
+  background-color: #45a049;
+}
+
+.my-button:active {
+  background-color: #3e8e41;
+}
 
 /* Modal Content */
 #error_notif {
@@ -17643,9 +17674,14 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
-h3 {
-  font-size: 1.25rem;
+  h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  /* Add more styling properties as desired */
 }
+
 h4 {
   font-size: 1.25rem;
 }

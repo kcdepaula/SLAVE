@@ -13,10 +13,11 @@ $id = (isset($_GET['id']) && $_GET['id'] != '') ? $_GET['id'] : '';
 $user = new User();
 $product = new Product();
 $order = new order();
+
 if(!$user->get_session()){
 	header("location: login.php");
 }
-$user_id = $user->get_user_id($_SESSION['user_email']);
+$login_id = $user->get_user_id($_SESSION['user_email']);
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
@@ -61,7 +62,7 @@ $user_id = $user->get_user_id($_SESSION['user_email']);
                         </a>
                     </div>
                     <div id="menu">
-      <span class="move-right"> <strong> Hello! <?php echo $user->get_user_firstname($user_id).' '.$user->get_user_lastname($user_id);?>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </strong></span> 
+      <span class="move-right"> <strong> Hello! <?php echo $user->get_user_firstname($login_id).' '.$user->get_user_lastname($login_id);?>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </strong></span> 
   </div> <br> <br>
                     <div class="u-custom-menu u-nav-container">
                         <ul class="u-custom-font u-font-oswald u-nav u-spacing-30 u-unstyled u-nav-1">
@@ -109,10 +110,7 @@ $user_id = $user->get_user_id($_SESSION['user_email']);
                                 <a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="index.php?subpage=productview&action=view" style="padding: 10px 46px;">Products</a>
                             </li>
                             <li class="u-nav-item">
-                                <a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="index.php?page=order-crud&subpage=orderview" style="padding: 10px 46px;">Orders</a>
-                            </li>
-                            <li class="u-nav-item">
-                                <a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="index.php?page=delivery-crud&subpage=deliveryview" style="padding: 10px 47px 10px 46px;">Deliveries</a>
+                                <a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="index.php?subpage=orderview" style="padding: 10px 46px;">Orders</a>
                             </li>
                             <li class="u-nav-item">
                                 <a class="u-border-2 u-border-active-grey-90 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="index.php?page=settings&subpage=view" style="padding: 10px 47px 10px 46px;"> User Settings</a>
@@ -131,10 +129,7 @@ $user_id = $user->get_user_id($_SESSION['user_email']);
                                         <a class="u-button-style u-nav-link" href="index.php?subpage=productview&action=view">Products</a>
                                     </li>
                                     <li class="u-nav-item">
-                                        <a class="u-button-style u-nav-link" href="index.php?page=order&subpage=orderview">Orders</a>
-                                    </li>
-                                    <li class="u-nav-item">
-                                        <a class="u-button-style u-nav-link" href="index.php?page=delivery&subpage=deliveryview">Deliveries</a>
+                                        <a class="u-button-style u-nav-link" href="index.php?subpage=orderview&action=view">Orders</a>
                                     </li>
                                     <li>
                                     <a href="index.php?page=settings$subpage=view">User Settings</a>
@@ -162,18 +157,24 @@ $user_id = $user->get_user_id($_SESSION['user_email']);
             require_once 'product-crud/index.php';
         break; 
         case 'orderview':
-            require_once 'order-crud/index.php';
-        break; 
-        case 'deliveryview':
-            require_once 'delivery-crud/index.php';
+             require_once 'order-crud/index.php';
         break; 
         default:
-            require_once 'index.php';
-        break; 
+            require_once 'main.php';
+        break;
+
     }
     ?>
   </div>
 
+
+  <script>
+     function hide()
+     {
+       // document.getElementById('sec-5aa7').style.display = 'none'; 
+     }
+ 
+ </script>
 
 </body>
 </html>

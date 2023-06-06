@@ -25,9 +25,20 @@ function create_new(){
     $desc= ucwords($_POST['desc']);  
     $price= ucwords($_POST['price']);       
     $type= $_POST['type'];
-    $size= ucwords($_POST['size']);
+    $size= ucwords($_POST['sizes']);
     $pid = $product->new_product($pname,$desc,$price,$type,$size);
     if(is_numeric($pid)){
         header('location: ../index.php?page=settings&subpage=products&action=profile&id='.$pid);
     }
+}
+function update_product(){
+	$product = new Product();
+    $pname= ucwords($_POST['pname']);  
+    $desc= ucwords($_POST['desc']);   
+    $price= ucwords($_POST['price']);       
+    $type= $_POST['type']; 
+    $size= ucwords($_POST['sizes']);  
+    $pid= $_POST['prodid']; 
+    $result = $product->update_product($pname,$desc,$price,$type,$size,$pid);
+    header('location: ../index.php?page=settings&subpage=products&action=profile&id='.$pid);
 }

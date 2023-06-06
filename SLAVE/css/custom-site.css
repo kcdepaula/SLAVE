@@ -10,6 +10,10 @@
   h6 {
     font-family: Roboto,sans-serif;
   }
+  #my-button {
+  display: inline-block;
+}
+
   /*end-variables font-family*/
   /*begin-variables color*/
   .u-overlap.u-overlap-transparent .u-header,
